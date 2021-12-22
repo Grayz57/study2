@@ -1,0 +1,40 @@
+﻿Decision,Cour ,TGI,Age créancier,Revenus créanciers,Age débiteur,Revenus débiteur,Durée du mariage,Montant de la prestation compensatoire,Taux de correspondance,Date,case_id
+Condamnation,Nîmes,Nîmes,43,16200,38,34500,14,10000,91,09/03/2015,955
+Non Condamnation,Nîmes,Nîmes,51,24444,53,25572,15,0,89,24/06/2015,955
+Condamnation,Nîmes,Avignon,46,12960,51,27576,22,140098,95,02/07/2015,955
+Condamnation,Nîmes,Privas,41,18000,42,31104,16,6000,94,02/07/2015,955
+Condamnation,Nîmes,Nîmes,44,18324,46,29256,17,70000,95,09/09/2015,955
+Condamnation,Nîmes,Avignon,43,27624,45,39600,18,32000,92,16/09/2015,955
+Non Condamnation,Nîmes,Nîmes,47,13392,52,28476,20,0,94,23/09/2015,955
+Condamnation,Nîmes,Avignon,50,14916,50,40584,18,44000,91,14/10/2015,955
+Condamnation,Nîmes,Ales,42,15216,41,26328,19,16000,90,22/11/2015,955
+Condamnation,Nîmes,Béziers,44,17820,48,27360,22,15000,91,17/02/2016,955
+Condamnation,Nîmes,Nîmes,59,26340,49,33900,17,136776,92,13/04/2016,955
+Condamnation,Nîmes,Nîmes,49,6528,54,27624,23,30000,90,06/07/2016,955
+Condamnation,Nîmes,Nîmes,40,19620,48,27024,18,25000,92,20/07/2016,955
+Condamnation,Nîmes,Avignon,51,8400,53,32420,27,106549,93,14/09/2016,955
+Condamnation,Nîmes,Avignon,44,13524,48,25188,18,103618,94,14/09/2016,955
+Condamnation,Nîmes,Carpentras,45,28872,51,34200,26,15000,89,14/12/2016,955
+Non Condamnation,Nîmes,Carpentras,43,14928,44,28356,16,0,93,11/01/2017,955
+Condamnation,Nîmes,Avignon,42,Inconnus,42,33600,22,30000,96,21/03/2018,955
+Non Condamnation,Nîmes,Nîmes,57,22440,59,30516,18,0,92,02/05/2018,955
+Condamnation,Nîmes,Avignon,42,20738,44,32004,7,6000,91,06/06/2018,955
+Condamnation,Douai,Arras,56,4800,53,34260,34,6000,91,04/11/2010,500
+Condamnation,Douai,Hazbrouck,48,Inconnus,60,37128,29,25000,95,12/05/2011,500
+Condamnation,Douai,Valenciennes,51,6300,55,32353,29,9300,92,09/06/2011,500
+Condamnation,Douai,Hazbrouck,56,12600,58,36864,36,72000,90,15/03/2012,500
+Condamnation,Douai,Arras,52,2400,60,38388,32,30000,94,21/03/2013,500
+Condamnation,Douai,Cambrai,48,23400,50,33216,26,15000,92,07/11/2013,500
+Condamnation,Douai,Douai,56,9720,58,32809,37,71000,90,28/05/2014,500
+Condamnation,Douai,Bethune,51,3576,50,36000,29,28800,95,06/05/2014,500
+Condamnation,Douai,Bethune,50,1979,55,37673,30,50000,96,12/06/2014,500
+Condamnation,Douai,Lille,51,18387,51,41520,28,52320,94,02/10/2014,500
+Non Condamnation,Douai,Valenciennes,50,4560,51,39180,26,0,94,23/10/2014,500
+Condamnation,Douai,Boulogne sur mer,50,8120,53,30562,29,40000,90,22/01/2015,500
+Condamnation,Douai,Valenciennes,52,8640,51,35230,28,30000,95,17/09/2015,500
+Condamnation,Douai,Douai,58,28971,63,32964,35,15000,90,05/11/2015,500
+Condamnation,Douai,Douai,57,7116,56,30000,28,12000,92,17/12/2015,500
+Condamnation,Douai ,Bethune,49,17520,54,34884,29,26000,95,17/03/2016,500
+Non Condamnation,Douai ,Avesne sur helpe,54,32797,58,38572,32,0,94,24/03/2016,500
+Condamnation,Douai,Douai,53,7936,54,30036,29,21600,93,20/10/2016,500
+Condamnation,Douai,Lille,51,19800,50,39836,23,30000,91,01/12/2016,500

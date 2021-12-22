@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+    Questionnaire post-expérimental
+{% endblock %}
+{% block content %}
+<p> Merci de répondre aux questions suivantes. </p>
+<br>
+<p> {{ formfield 'age' }} </p>
+<p> {{ formfield 'female' }} </p>
+<p> {{ formfield 'nonbinaire'}}</p>
+<p> {{ formfield 'niveau' }} </p>
+<p> {{ formfield 'discipline' }} </p>
+
+{{ formfield_errors 'nonbinaire' }}
+{% next_button %}
+{% endblock %}

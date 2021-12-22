@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+    Questionnaire post-expérimental
+{% endblock %}
+{% block content %}
+
+<br>
+<p> {{ formfield 'Risque' }} </p>
+<p> {{ formfield 'Ambiguité1'}}</p>
+<p> {{ formfield 'Ambiguité2'}}</p>
+<br>
+
+<p> {{ formfield 'ExpJuridique' }} </p>
+<br>
+{% next_button %}
+{% endblock %}

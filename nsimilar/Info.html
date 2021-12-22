@@ -1,0 +1,343 @@
+{{ block scripts }}
+<script src="{{ static 'js/accessibility.js'}}"></script>
+<script src="{{ static 'js/highcharts.js'}}"></script>
+<script src="{{ static 'js/highcharts-more.js'}}"></script>
+<script src="{{ static 'js/data.js'}}"></script>
+<script>
+    function displayDataPointInfo(data_point) {
+        $('.highcharts-data-point-info').remove();
+        $('.highcharts-figure').append(data_point.table)
+    }
+
+    $(window).on('load', function () {
+        $(document).on('click', function (e) {
+            if(!e.target.closest('.highcharts-container')){
+                $('.highcharts-data-point-info').remove();
+            }
+        })
+    });
+
+    Highcharts.chart('highcharts-container', {
+
+        chart: {
+            type: 'bubble',
+            plotBorderWidth: 1,
+            zoomType: 'xy',
+        },
+
+        credits: {
+            enabled: false,
+        },
+
+        title: {
+            text: js_vars.bubble_chart_title
+        },
+
+        legend: {
+            itemDistance: 200,
+            itemMarginTop: 18,
+            itemStyle: {
+                fontWeight: 'lighter',
+                MarginTop: 18
+            }
+        },
+
+        xAxis: {
+            gridLineWidth: 1,
+            type: 'datetime',
+            labels: {
+                formatter: function() {
+                    return Highcharts.dateFormat('%m/%Y', this.value);
+                }
+            },
+            accessibility: {
+                rangeDescription: 'Date Time'
+            },
+            lineColor: '#e6e6e6',
+            tickWidth: 1,
+            tickLength: 8,
+            tickColor: '#e6e6e6',
+        },
+
+        yAxis: {
+            startOnTick: false,
+            endOnTick: false,
+            title: '',
+            labels: {
+                format: '{value}%'
+            },
+            accessibility: {
+                rangeDescription: 'Percentage: 0% to 100%.'
+            },
+            lineColor: '#e6e6e6',
+            tickWidth: 1,
+            tickLength: 10,
+            tickColor: '#e6e6e6',
+        },
+
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<table class="highcharts-tooltip-table">',
+            pointFormat: '<tr><td>{point.pension}€</td></tr>',
+            footerFormat: '</table>',
+            followPointer: false,
+            backgroundColor: 'rgb(255, 255, 255, 0.9)',
+            borderColor: '#e6e6e6',
+            padding: 6,
+            shadow: false,
+            distance: 24,
+            outside: true,
+            hideDelay: 200,
+            className: 'bubble-chart-tooltip'
+        },
+
+        plotOptions: {
+            series: {
+                cursor: 'pointer',
+                states: {
+                    hover: {
+                        halo: {
+                            size: 0
+                        }
+                    }
+                },
+                point: {
+                    events: {
+                        click: function () {
+                            displayDataPointInfo(this);
+                        }
+                    }
+                }
+            }
+        },
+
+        series: [{
+            name: js_vars.cases_series.condemnation.name,
+            data: js_vars.cases_series.condemnation.data,
+            color: 'rgb(125, 40, 36)',
+            marker: {
+                fillColor: 'rgb(125, 40, 36, 0.25)',
+                states: {
+                    hover: {
+                        fillColor: 'rgb(125, 40, 36, 1)'
+                    },
+                    select: {
+                        fillColor: 'rgb(125, 40, 36, 1)'
+                    }
+                }
+            },
+            animation: false
+        }, {
+            name: js_vars.cases_series.condemnation_no.name,
+            data: js_vars.cases_series.condemnation_no.data,
+            color: 'rgb(185, 148, 90)',
+            marker: {
+                fillColor: 'rgb(185, 148, 90, 0.25)',
+                states: {
+                    hover: {
+                        fillColor: 'rgb(185, 148, 90, 1)'
+                    },
+                    select: {
+                        fillColor: 'rgb(185, 148, 90, 1)'
+                    }
+                }
+            },
+            animation: false
+        }]
+    });
+</script>
+
+
+
+
+ <script>
+     var startTime = Date.now()
+ console.log(startTime)
+function doTimeStuff(){
+console.log("dotimestuff started");
+var timeSpent = Date.now() - startTime;
+console.log("timeSpent calculated:");
+console.log(timeSpent);
+// save the number in the hidden field
+console.log("writing to hidden field");
+console.log("hidden field value before: " + document.getElementById('timeSpent').value);
+document.getElementById('timeSpent').value = timeSpent;
+console.log("hidden field value after: " + document.getElementById('timeSpent').value);
+}
+    </script>
+
+    <script>
+        $(function () {
+            $('input[type=radio]').on('change', function () {
+                let clickedRadio = this,
+                    afterClickedRadio = false;
+
+                let radios = document.querySelectorAll('input[type=radio]');
+                for (let i = 0; i < radios.length; ++i) {
+                    let radio = radios[i];
+                    if (radio === clickedRadio) {
+                        afterClickedRadio = true;
+                        continue;
+                    }
+                    if (!afterClickedRadio && clickedRadio.value === 'left' && radio.value === 'left') {
+                        radio.checked = true;
+                    }
+                    if (afterClickedRadio && clickedRadio.value === 'right' && radio.value === 'right') {
+                        radio.checked = true;
+                    }
+                }
+            });
+
+            $('.otree-btn-next').on('click', function (e) {
+                let form = $('#form')[0];
+                if (form.checkValidity()) {
+                    e.preventDefault();
+                    let radios = document.querySelectorAll('input[type=radio]'),
+                    decision = document.getElementById('id_ambiguity');
+
+                    for (let i = 0; i < radios.length; ++i) {
+                        let radio = radios[i];
+                        if (radio.value === 'right' && radio.checked) {
+                            decision.value = parseInt(radio.name);
+                            break;
+                        }
+                    }
+                    form.submit();
+                }
+            });
+        });
+    </script>
+{{ endblock }}
+
+{{ block styles }}
+<style>
+    #highcharts-container {
+        height: 400px;
+    }
+
+    .highcharts-figure {
+        min-width: 310px;
+        max-width: 800px;
+        margin: 1em auto;
+    }
+
+    .highcharts-tooltip-table {
+        width: 120px;
+        text-align: center;
+    }
+
+    .fs-smaller {
+        font-size: smaller;
+    }
+
+    .color-amber {
+        color: rgb(185, 148, 90);
+    }
+</style>
+{{ endblock }}
+{{ block styles }}
+    <style>
+        .otree-title {
+            text-align: center;
+        }
+        .table th {
+            font-weight: normal;
+        }
+        th.v-align-top {
+            vertical-align: top;
+        }
+        .otree-btn-next {
+            display: inherit;
+            margin: 2rem auto;
+        }
+        .background-black {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 0.2rem;
+        }
+        tr.tr-no-hover:hover {
+            --bs-table-accent-bg: rgba(0, 0, 0, 0) !important;
+        }
+        th.option-2 {
+            min-width: 30%;
+        }
+    </style>
+{{ endblock }}
+
+{{ block title }}
+<pre>
+
+</pre>
+
+
+    <hr>
+{{ endblock }}
+{{ block content }}
+<h>Voici les informations de l'affaire.
+    Le divorce a été jugé devant le tribunal de {{tribunal}} et la cour d'appel de ressort est celle de {{appel}}. Le mariage a duré {{mariage}}. La valeur du patrimoine du couple était de {{communaute}}€.
+    Le créancier est agé de {{age_c}} ans et il est en parfaite santé. Ses revenus annuels sont de {{revenus_c}}€.
+    Le débiteur est agé de {{age_d}} ans et il est en parfaite santé. Ses revenus annuels sont de {{revenus_d}}€.
+</h>
+
+<hr>
+Pour vous aider dans votre prise de décision, vous disposez d’un graphique tiré d’un outil de justice prédictive. Les informations de cette affaire ont été insérées dans l’outil, ce qui vous permet d’obtenir accès à des informations d'affaires similaires. Pour créer ce graphique l’outil s’est basé sur sa base de données d’affaires judiciaires.
+
+<figure class="highcharts-figure">
+    <div id="highcharts-container"></div>
+</figure>
+
+
+
+<hr/>
+    <table class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th class="v-align-top">
+                    <div class="background-black">Option 1</div>
+                                           Q{{player.round_number}}: Que préférez-vous?
+                        Vous gagnez 20€ si le juge condamne le débiteur à payer au créancier une prestation compensatoire {{barem}}. Notez que le juge dispose de trois choix: soit donner une somme {{low_sup}}€ ou moins, soit entre {{low_sup}}€ et {{mid_sup}}€, soit un montant de {{mid_sup}}€ ou plus.
+
+
+                </th>
+                <th>1</th>
+                <th>2</th>
+                <th class="option-2 v-align-top">
+                    <div class="background-black">Option 2</div>
+                    Vous gagnez {{Constants.bonus }}€ avec une probabilité de :
+                </th>
+            </tr>
+        </thead>
+        {{ for choice in radiolist }}
+            {{if forloop.counter == 1}}
+                <tr class="tr-no-hover">
+                    <td rowspan="21">
+<img src={{aide}}/>
+                    </td>
+                </tr>
+            {{ endif }}
+            <tr>
+
+                <td class="text-center">
+                    <input type="radio" class="form-check-input" name="{{ choice.0 }}" value="left" required>
+                </td>
+                <td class="text-center">
+                    <input type="radio" class="form-check-input" name="{{ choice.0 }}" value="right" required>
+                </td>
+                <td class="text-center">
+                    {{ choice.1 }}%
+                </td>
+            </tr>
+        {{ endfor }}
+    </table>
+
+
+
+
+
+    {{ formfield_errors 'ambiguity' }}
+    {{ formfield_errors 'timeSpent' }}
+    <input type="hidden" name="ambiguity" id="id_ambiguity">
+    <input type="hidden" name="timeSpent" id="timeSpent" />
+<button class="otree-btn-next btn btn-primary" onclick="doTimeStuff()">Next</button>
+
+{{ endblock }}
