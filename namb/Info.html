@@ -101,7 +101,9 @@ console.log("hidden field value after: " + document.getElementById('timeSpent').
 Pour vous aider dans votre prise de décision, vous disposez d’un graphique tiré d’un outil de justice prédictive. Les informations de cette affaire ont été insérées dans l’outil, ce qui vous permet d’obtenir un graphique concernant les montants estimés par l’outil et les probabilités qu’elles soient octroyées par le juge. Pour créer ce graphique l’outil s’est basé sur sa base de données d’affaires judiciaires.
 
 <hr>
-                    <img src={{image}}/>
+                    <img src={{image}}
+                    width="1000"
+     height="900"/>
 <hr>
  Q{{player.round_number}} : Que préférez vous?
 
@@ -128,7 +130,9 @@ Pour vous aider dans votre prise de décision, vous disposez d’un graphique ti
             {{if forloop.counter == 1}}
                 <tr class="tr-no-hover">
                     <td rowspan="21">
-<img src={{aide}}/>
+<img src={{aide}}
+width="800"
+     height="350"/>
                     </td>
                 </tr>
             {{ endif }}

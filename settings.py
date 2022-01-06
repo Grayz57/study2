@@ -9,7 +9,7 @@ dict(
     ),
     dict(
         name='ALL',
-        app_sequence=['nrisk', 'namb', 'nsim','arisk','aamb','asim', 'payementforall'],
+        app_sequence=['nrisk','attendrelesautres1', 'namb','attendrelesautres2', 'nsim','attendrelesautres3','arisk','attendrelesautres4','aamb','attendrelesautres5','asim', 'payementforall'],
         num_demo_participants=1,
     ),
     dict(

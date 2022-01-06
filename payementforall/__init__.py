@@ -87,7 +87,7 @@ class Player(BasePlayer):
     discipline_libre = models.StringField(
         blank=True,
         label="Si autre précisez.",
-        doc=""
+        doc="Si autre précisez."
     )
     # Questionnaire
 
