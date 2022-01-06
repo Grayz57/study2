@@ -1,46 +1,26 @@
 from os import environ
 
 SESSION_CONFIGS = [
+dict(
+        name='Sessionmercredimatin',
+        display_name='mercredimatin',
+        app_sequence=['nsim'],
+        num_demo_participants=3,
+    ),
     dict(
         name='ALL',
-        app_sequence=['nsimilar','nrisk','namb','asim','arisk','aamb', 'Payement'],
+        app_sequence=['nrisk', 'namb', 'nsim','arisk','aamb','asim', 'payementforall'],
+        num_demo_participants=1,
+    ),
+    dict(
+        name='TEST23123',
+        app_sequence=['nrisk', 'namb', 'nsim', 'Payementtest2'],
         num_demo_participants=2,
     ),
     dict(
-        name='TESTNSIM',
-        app_sequence=['nsimilar','payementtest'],
+        name='TEST14H',
+        app_sequence=['arisk','aamb','asim','Payement14h'],
         num_demo_participants=2,
-    ),
-     dict(
-         name= 'namb',
-         app_sequence=['namb'],
-         num_demo_participants=1,
-     ),
-    dict(
-        name='nrisk',
-        app_sequence=['nrisk'],
-        num_demo_participants=1,
-    ),
-
-    dict(
-        name='aamb',
-        app_sequence=['aamb'],
-        num_demo_participants=1,
-    ),
-    dict(
-        name='arisj',
-        app_sequence=['arisk'],
-        num_demo_participants=1,
-    ),
-    dict(
-        name='asim',
-        app_sequence=['asim'],
-        num_demo_participants=1,
-    ),
-    dict(
-        name='test',
-        app_sequence=['testoun'],
-        num_demo_participants=1,
     ),
 ]
 
@@ -50,7 +30,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
+    real_world_currency_per_point=.02, participation_fee=0.00, doc=""
 )
 
 PARTICIPANT_FIELDS = ['events_table']

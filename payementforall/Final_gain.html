@@ -1,0 +1,76 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+    L'expérience est désormais terminée.
+{% endblock %}
+{% block content %}
+<p> Merci de votre participation à cette expérience.</p>
+
+<p>
+Au jeu numéro 1 vous étiez prêt à payer {{wtpaamb}} et le prix de l'information était de {{randaamb}}. Par conséquent
+{{ if wtpaamb >= randaamb}}
+   l'information à été achetée. Le round {{roundaamb}} a été tiré et vous gagnez {{gainaamb}}
+{{else}}
+    seuls les 6 premiers rounds de ce jeu (ou vous n'aviez pas l'information) pouvaient être tirés au sort. Le round {{roundaamb2}} a été tiré au sort et votre gain pour ce round est de {{gainaamb2}}
+{{endif}}
+</p>
+
+    <p>Au jeu numéro 2 vous étiez prêt à payer {{wtparisk}} et le prix de l'information était de {{randarisk}}. Par conséquent
+{{ if wtparisk >= randarisk}}
+l'information à été achetée. Le round {{roundarisk}} a été tiré et vous gagnez {{gainarisk}}
+{{else}}
+seuls les 6 premiers rounds de ce jeu (ou vous n'aviez pas l'information) pouvaient être tirés au sort. Le round {{roundarisk2}} a été tiré au sort et votre gain pour ce round est de {{gainarisk2}}
+{{endif}}</p>
+
+
+
+
+
+<p>Au jeu numéro 3 vous étiez prêt à payer {{wtpasim}} et le prix de l'information était de {{randasim}}. Par conséquent
+{{ if wtpasim >= randasim}}
+l'information à été achetée. Le round {{roundasim}} a été tiré et vous gagnez {{gainasim}}
+{{else}}
+seuls les 6 premiers rounds de ce jeu (ou vous n'aviez pas l'information) pouvaient être tirés au sort. Le round {{roundasim2}} a été tiré au sort et votre gain pour ce round est de {{gainasim2}}
+{{endif}}</p>
+
+
+
+
+<p>Au jeu numéro 4 vous étiez prêt à payer {{wtpnamb}} et le prix de l'information était de {{randnamb}}. Par conséquent
+{{ if wtpnamb >= randnamb}}
+l'information à été achetée. Le round {{roundnamb}} a été tiré et vous gagnez {{gainnamb}}
+{{else}}
+seuls les 6 premiers rounds de ce jeu (ou vous n'aviez pas l'information) pouvaient être tirés au sort. Le round {{roundnamb2}} a été tiré au sort et votre gain pour ce round est de {{gainnamb2}}
+{{endif}}
+</p>
+
+
+<p>Au jeu numéro 5 vous étiez prêt à payer {{wtpnrisk}} et le prix de l'information était de {{randnrisk}}. Par conséquent
+{{ if wtpnrisk >= randnrisk}}
+l'information à été achetée. Le round {{roundnrisk}} a été tiré et vous gagnez {{gainnrisk}}
+{{else}}
+seuls les 6 premiers rounds de ce jeu (ou vous n'aviez pas l'information) pouvaient être tirés au sort. Le round {{roundnrisk2}} a été tiré au sort et votre gain pour ce round est de {{gainnrisk2}}
+{{endif}}</p>
+
+
+
+
+
+<p>Au jeu numéro 6 vous étiez prêt à payer {{wtpnsim}} et le prix de l'information était de {{randnsim}}. Par conséquent
+{{ if wtpnsim >= randnsim}}
+l'information à été achetée. Le round {{roundnsim}} a été tiré et vous gagnez {{gainnsim}}
+{{else}}
+seuls les 6 premiers rounds de ce jeu (ou vous n'aviez pas l'information) pouvaient être tirés au sort. Le round {{roundnsim2}} a été tiré au sort et votre gain pour ce round est de {{gainnsim2}}
+{{endif}}</p>
+
+
+
+
+
+
+
+
+<p> Vos gains pendant l'expérience sont de {{player.payoff}} ce qui correspond à {{player.payoff_euros}} euros.</p>
+<p> Merci de rester à votre place jusqu'à ce qu'on appelle votre numéro de poste. </p>
+
+{% endblock %}

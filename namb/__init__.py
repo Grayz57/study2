@@ -40,20 +40,20 @@ class Constants(BaseConstants):
             4: dict(winning_colors=balls_colors[0:3:2], balls_num_per_color=dict(low=0, mid=0, high=100),fortemplate=dict(aide='/static/aidedouai/douai5.png',radiolist=radio_list_two_event,barem='de 55 000€ ou moins ou de 60000€ ou plus', low_inf=0, low_sup=55000,mid_sup=60000, high_sup=60000, image='/static/ambiguity/ambiguitedouai.png',tribunal_judiciaire='Douai (59)', cour_appel='Douai (59)', mariage='29 ans',valeur_communauté='134 231', age_c='52', santé='Parfaite santé',revenus_annuels='7 104', age_d='53', santé_d='parfaite santé', revenus_d='37 584')),
             5: dict(winning_colors=balls_colors[1:3], balls_num_per_color=dict(low=0, mid=0, high=100), fortemplate=dict(aide='/static/aidedouai/douai6.png',radiolist=radio_list_two_event,barem='de plus de 55 000€', low_inf=0, low_sup=55000, mid_sup=60000, high_sup=60000,image='/static/ambiguity/ambiguitedouai.png', tribunal_judiciaire='Douai (59)', cour_appel='Douai (59)',mariage='29 ans', valeur_communauté='134 231', age_c='52', santé='Parfaite santé',revenus_annuels='7 104', age_d='53', santé_d='parfaite santé', revenus_d='37 584')),
         },
-
         1: {
-            0: dict(winning_colors=balls_colors[0], balls_num_per_color=dict(low=100, mid=0, high=0),fortemplate=dict(aide='/static/aideavignon/avignon1.png',radiolist=radio_list,barem='de 40 000€ ou moins', low_inf=0, low_sup=40000, mid_sup=45000,high_sup=45000, image='/static/ambiguity/ambiguiteavignon.png',tribunal_judiciaire='Avignon (84)', cour_appel='Nîmes (30)', mariage='18 ans',valeur_communauté='195 000', age_c='47', santé='Parfaite santé',revenus_annuels='11 448', age_d='49', santé_d='parfaite santé', revenus_d='31 896')),
-            1: dict(winning_colors=balls_colors[1], balls_num_per_color=dict(low=100, mid=0, high=0),fortemplate=dict(aide='/static/aideavignon/avignon2.png',radiolist=radio_list,barem='entre 40 000€ et 45000€', low_inf=0, low_sup=40000, mid_sup=45000,high_sup=45000, image='/static/ambiguity/ambiguiteavignon.png',tribunal_judiciaire='Avignon (84)', cour_appel='Nîmes (30)', mariage='18 ans',valeur_communauté='195 000', age_c='47', santé='Parfaite santé',revenus_annuels='11 448', age_d='49', santé_d='parfaite santé', revenus_d='31 896')),
-            2: dict(winning_colors=balls_colors[2], balls_num_per_color=dict(low=100, mid=0, high=0),fortemplate=dict(aide='/static/aideavignon/avignon3.png',radiolist=radio_list,barem='de 45 000€ ou plus', low_inf=0, low_sup=40000, mid_sup=45000, high_sup=45000,image='/static/ambiguity/ambiguiteavignon.png', tribunal_judiciaire='Avignon (84)',cour_appel='Nîmes (30)', mariage='18 ans', valeur_communauté='195 000', age_c='47',santé='Parfaite santé', revenus_annuels='11 448', age_d='49',santé_d='parfaite santé', revenus_d='31 896')),
-            3: dict(winning_colors=balls_colors[0:2], balls_num_per_color=dict(low=100, mid=0, high=0),fortemplate=dict(aide='/static/aideavignon/avignon4.png',radiolist=radio_list_two_event,barem='de moins de 45 000€', low_inf=0, low_sup=40000, mid_sup=45000,high_sup=45000, image='/static/ambiguity/ambiguiteavignon.png',tribunal_judiciaire='Avignon (84)', cour_appel='Nîmes (30)', mariage='18 ans',valeur_communauté='195 000', age_c='47', santé='Parfaite santé',revenus_annuels='11 448', age_d='49', santé_d='parfaite santé', revenus_d='31 896')),
-            4: dict(winning_colors=balls_colors[1:3], balls_num_per_color=dict(low=100, mid=0, high=0),fortemplate=dict(aide='/static/aideavignon/avignon5.png',radiolist=radio_list_two_event,barem='de plus de 40 000€', low_inf=0, low_sup=40000, mid_sup=45000, high_sup=45000,image='/static/ambiguity/ambiguiteavignon.png', tribunal_judiciaire='Avignon (84)',cour_appel='Nîmes (30)', mariage='18 ans', valeur_communauté='195 000', age_c='47',santé='Parfaite santé', revenus_annuels='11 448', age_d='49',santé_d='parfaite santé', revenus_d='31 896')),
-            5: dict(winning_colors=balls_colors[0:3:2], balls_num_per_color=dict(low=100, mid=0, high=0),fortemplate=dict(aide='/static/aideavignon/avignon6.png',radiolist=radio_list_two_event,barem='de 40 000€ ou moins ou de 45 000€ ou plus', low_inf=0, low_sup=40000,mid_sup=45000, high_sup=45000, image='/static/ambiguity/ambiguiteavignon.png',tribunal_judiciaire='Avignon (84)', cour_appel='Nîmes (30)', mariage='18 ans',valeur_communauté='195 000', age_c='47', santé='Parfaite santé',revenus_annuels='11 448', age_d='49', santé_d='parfaite santé', revenus_d='31 896')),
-
+            0: dict(winning_colors=balls_colors[0], balls_num_per_color=dict(low=0, mid=0, high=100),fortemplate=dict(aide='/static/aidedouai/douai1.png',radiolist=radio_list,barem='de 55 000€ ou moins', low_inf=0, low_sup=55000, mid_sup=60000,high_sup=60000, image='/static/ambiguity/ambiguitedouai.png', tribunal_judiciaire='Douai (59)',cour_appel='Douai (59)', mariage='29 ans', valeur_communauté='134 231', age_c='52',santé='Parfaite santé', revenus_annuels='7 104', age_d='53',santé_d='parfaite santé', revenus_d='37 584')),
+            1: dict(winning_colors=balls_colors[1], balls_num_per_color=dict(low=0, mid=0, high=100),fortemplate=dict(aide='/static/aidedouai/douai2.png',radiolist=radio_list,barem='comprise entre 55 000€ et 60 000€', low_inf=0, low_sup=55000, mid_sup=60000,high_sup=60000, image='/static/ambiguity/ambiguitedouai.png', tribunal_judiciaire='Douai (59)',cour_appel='Douai (59)', mariage='29 ans', valeur_communauté='134 231', age_c='52',santé='Parfaite santé', revenus_annuels='7 104', age_d='53',santé_d='parfaite santé', revenus_d='37 584')),
+            2: dict(winning_colors=balls_colors[2], balls_num_per_color=dict(low=0, mid=0, high=100),fortemplate=dict(aide='/static/aidedouai/douai3.png',radiolist=radio_list,barem='de 60 000€ ou plus', low_inf=0, low_sup=55000, mid_sup=60000, high_sup=60000,image='/static/ambiguity/ambiguitedouai.png', tribunal_judiciaire='Douai (59)',cour_appel='Douai (59)', mariage='29 ans', valeur_communauté='134 231', age_c='52',santé='Parfaite santé', revenus_annuels='7 104', age_d='53',santé_d='parfaite santé', revenus_d='37 584')),
+            3: dict(winning_colors=balls_colors[0:2], balls_num_per_color=dict(low=0, mid=0, high=100),fortemplate=dict(aide='/static/aidedouai/douai4.png',radiolist=radio_list_two_event,barem='de moins de 60 000€', low_inf=0, low_sup=55000, mid_sup=60000,high_sup=60000, image='/static/ambiguity/ambiguitedouai.png', tribunal_judiciaire='Douai (59)',cour_appel='Douai (59)', mariage='29 ans', valeur_communauté='134 231', age_c='52',santé='Parfaite santé', revenus_annuels='7 104', age_d='53',santé_d='parfaite santé', revenus_d='37 584')),
+            4: dict(winning_colors=balls_colors[0:3:2], balls_num_per_color=dict(low=0, mid=0, high=100),fortemplate=dict(aide='/static/aidedouai/douai5.png',radiolist=radio_list_two_event,barem='de 55 000€ ou moins ou de 60000€ ou plus', low_inf=0, low_sup=55000,mid_sup=60000, high_sup=60000, image='/static/ambiguity/ambiguitedouai.png',tribunal_judiciaire='Douai (59)', cour_appel='Douai (59)', mariage='29 ans',valeur_communauté='134 231', age_c='52', santé='Parfaite santé',revenus_annuels='7 104', age_d='53', santé_d='parfaite santé', revenus_d='37 584')),
+            5: dict(winning_colors=balls_colors[1:3], balls_num_per_color=dict(low=0, mid=0, high=100), fortemplate=dict(aide='/static/aidedouai/douai6.png',radiolist=radio_list_two_event,barem='de plus de 55 000€', low_inf=0, low_sup=55000, mid_sup=60000, high_sup=60000,image='/static/ambiguity/ambiguitedouai.png', tribunal_judiciaire='Douai (59)', cour_appel='Douai (59)',mariage='29 ans', valeur_communauté='134 231', age_c='52', santé='Parfaite santé',revenus_annuels='7 104', age_d='53', santé_d='parfaite santé', revenus_d='37 584')),
         }
-    }
+        }
 
 
-    bonus = 20
+
+
+    bonus = 1000
 
 class Subsession(BaseSubsession):
     pass
@@ -70,8 +70,9 @@ class Player(BasePlayer):
     decision_to_pay = models.IntegerField(min=1, max=Constants.num_choices)
     timeSpent = models.FloatField()
     tirage= models.IntegerField()
+    tirage2= models.IntegerField()
     rand_wtp = models.IntegerField()
-    wtp = models.IntegerField()
+    wtp = models.IntegerField(min=0, max= 300)
 # FUNCTIONS
 
 
@@ -89,13 +90,19 @@ def creating_session(subsession: Subsession):
         part_num, event_num = get_event(const, round_number)
         p.part = part_num
         p.event = p.participant.events_table[part_num][event_num]
-        p.rand_wtp = randint(1, 10)
+        p.rand_wtp = randint(0, 300)
+
+
 def tirage_gagnant (player: Player):
         player.tirage = sample(range(1, 12), 1)[0]
+        player.tirage2 =sample(range(1,6),1)[0]
         player.participant.vars['round_namb'] = player.tirage
         player.participant.vars['payoff_namb'] = player.in_round(player.tirage).payoff
+        player.participant.vars['wtp_namb'] = player.in_round(7).wtp
+        player.participant.vars['rand_wtp_namb']= player.in_round(7).rand_wtp
 
-
+        player.participant.vars['round_namb2'] = player.tirage2
+        player.participant.vars['payoff_namb2'] = player.in_round(player.tirage2).payoff
 def get_rnd_decision(const: Constants):
     return randint(1, const.num_choices)
 
@@ -140,10 +147,9 @@ def set_payoff_wtp(player: Player, const: Constants):
     decision_to_pay = get_rnd_decision(const)
     player.decision_to_pay = decision_to_pay
     if play_lottery(player.ambiguity, decision_to_pay):
-        player.payoff = is_winning_lottery(const, player.part, player.event, decision_to_pay) - player.rand_wtp
+        player.payoff = is_winning_lottery(const, player.part, player.event, decision_to_pay) - player.in_round(7).rand_wtp
     else:
-        player.payoff = is_winning_draw_from_urn(const, player.part, player.event) - player.rand_wtp
-
+        player.payoff = is_winning_draw_from_urn(const, player.part, player.event) - player.in_round(7).rand_wtp
 # PAGES
 class Decision(Page):
     form_model = 'player'
@@ -151,7 +157,7 @@ class Decision(Page):
 
     @staticmethod
     def is_displayed(player:Player):
-        return player.wtp < player.rand_wtp
+        return player.round_number < 7
 
 
     @staticmethod
@@ -181,11 +187,6 @@ class Decision(Page):
         aide = const.events_table[player.part][player.event]["fortemplate"]["aide"]
         return dict(aide=aide,radiolist=radiolist,low_inf=low_inf,low_sup=low_sup,mid_sup=mid_sup,high_sup=high_sup,barem=barem,image=image_path,tribunal=tribunal,appel=appel,mariage=mariage,communaute=communaute,age_c=age_c,sante_c=sante_c,revenus_c=revenus_c, age_d=age_d, sante_d=sante_d,revenus_d=revenus_d)
 
-class Nouvelleurne(Page):
-    body_text = "Une nouvelle urne va être générée"
-    @staticmethod
-    def is_displayed(player: Player):
-        return player.round_number == 6
 
 class Nouvellepartie(Page):
     body_text = "Une nouvelle partie va commencer"
@@ -197,9 +198,12 @@ class Nouvellepartie(Page):
         tirage_gagnant(player)
 
 class WTP(Page):
+
+    @staticmethod
+    def is_displayed(player: Player):
+        return player.round_number == 7
     form_model = 'player'
     form_fields = ['wtp']
-
 class Info(Page):
 
     form_model = 'player'
@@ -207,7 +211,7 @@ class Info(Page):
 
     @staticmethod
     def is_displayed(player:Player):
-        return player.wtp >= player.rand_wtp
+        return player.round_number > 6
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
@@ -236,4 +240,4 @@ class Info(Page):
         aide = const.events_table[player.part][player.event]["fortemplate"]["aide"]
         return dict(aide=aide,radiolist=radiolist,low_inf=low_inf,low_sup=low_sup,mid_sup=mid_sup,high_sup=high_sup,barem=barem,image=image_path,tribunal=tribunal,appel=appel,mariage=mariage,communaute=communaute,age_c=age_c,sante_c=sante_c,revenus_c=revenus_c, age_d=age_d, sante_d=sante_d,revenus_d=revenus_d)
 
-page_sequence = [WTP,Info,Decision,Nouvelleurne,Nouvellepartie]
+page_sequence = [WTP,Info,Decision,Nouvellepartie]

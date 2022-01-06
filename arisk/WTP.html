@@ -1,8 +1,13 @@
 {{ block title }}
-    Une nouvelle urne va être générée.
+    Achat d'information
 {{ endblock }}
 {{ block content }}
-    {{formfields}}
+<p> Veuillez donner le prix maximum auquel vous souhaiterez acheter l'information. Un nombre aléatoire sera tiré entre 0 et 300. Si le prix que vous êtes prêt à payer est supérieur ou égale à cette somme, alors vous payerez le prix correspondant au nombre aléatoire tiré au sort.
+    Si vous avez acheté l'information l'ensemble des 12 rounds du jeu seront susceptibles d'être tirés au sort pour le paiement.
+    Si vous n'avez pas obtenu l'information, alors seuls les 6 premiers rounds du jeu seront pris en compte pour le paiement. Vous ne saurez qu'à la fin du jeu si vous avez effectivement obtenu l'information.
+    Dans tous les cas, vous jouerez 6 rounds sans information et 6 rounds avec information.
+</p>
+{{ formfield 'wtp' label="Combien êtes vous prêt à payer pour obtenir l'information ?" }}
     {{ next_button }}
 {{ endblock }}
 

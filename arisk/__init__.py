@@ -54,7 +54,7 @@ class Constants(BaseConstants):
     }
 
 
-    bonus = 20
+    bonus = 1000
 
 class Subsession(BaseSubsession):
     pass
@@ -71,10 +71,10 @@ class Player(BasePlayer):
     decision_to_pay = models.IntegerField(min=1, max=Constants.num_choices)
     timeSpent = models.FloatField()
     tirage= models.IntegerField()
+    tirage2=models.IntegerField()
     rand_wtp = models.IntegerField()
-    wtp = models.IntegerField()
+    wtp = models.IntegerField(min=0, max= 300)
 # FUNCTIONS
-
 
 
 def creating_session(subsession: Subsession):
@@ -90,12 +90,19 @@ def creating_session(subsession: Subsession):
         part_num, event_num = get_event(const, round_number)
         p.part = part_num
         p.event = p.participant.events_table[part_num][event_num]
-        p.rand_wtp = randint(1, 10)
+        p.rand_wtp = randint(0, 300)
+
 def tirage_gagnant (player: Player):
         player.tirage = sample(range(1, 12), 1)[0]
         player.participant.vars['round_arisk'] = player.tirage
         player.participant.vars['payoff_arisk'] = player.in_round(player.tirage).payoff
+        player.participant.vars['wtp_arisk'] = player.in_round(7).wtp
+        player.participant.vars['rand_wtp_arisk']= player.in_round(7).rand_wtp
 
+
+        player.tirage2 = sample(range(1, 6), 1)[0]
+        player.participant.vars['round_arisk2'] = player.tirage2
+        player.participant.vars['payoff_arisk2'] = player.in_round(player.tirage2).payoff
 
 def get_rnd_decision(const: Constants):
     return randint(1, const.num_choices)
@@ -141,9 +148,9 @@ def set_payoff_wtp(player: Player, const: Constants):
     decision_to_pay = get_rnd_decision(const)
     player.decision_to_pay = decision_to_pay
     if play_lottery(player.ambiguity, decision_to_pay):
-        player.payoff = is_winning_lottery(const, player.part, player.event, decision_to_pay) - player.rand_wtp
+        player.payoff = is_winning_lottery(const, player.part, player.event, decision_to_pay) - player.in_round(7).rand_wtp
     else:
-        player.payoff = is_winning_draw_from_urn(const, player.part, player.event) - player.rand_wtp
+        player.payoff = is_winning_draw_from_urn(const, player.part, player.event) - player.in_round(7).rand_wtp
 
 # PAGES
 class Decision(Page):
@@ -152,7 +159,7 @@ class Decision(Page):
 
     @staticmethod
     def is_displayed(player:Player):
-        return player.wtp < player.rand_wtp
+        return player.round_number < 7
 
 
     @staticmethod
@@ -192,6 +199,10 @@ class Nouvellepartie(Page):
         tirage_gagnant(player)
 
 class WTP(Page):
+
+    @staticmethod
+    def is_displayed(player: Player):
+        return player.round_number == 7
     form_model = 'player'
     form_fields = ['wtp']
 
@@ -202,7 +213,7 @@ class Info(Page):
 
     @staticmethod
     def is_displayed(player:Player):
-        return player.wtp >= player.rand_wtp
+        return player.round_number > 6
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
@@ -225,4 +236,4 @@ class Info(Page):
         radiolist = const.events_table[player.part][player.event]["fortemplate"]["radiolist"]
         return dict(radiolist=radiolist,black=black, red= red, yellow= yellow, win=win, black_inf=black_inf,black_sup=black_sup, yellow_inf=yellow_inf,yellow_sup=yellow_sup,red_inf=red_inf,red_sup=red_sup, good=good)
 
-page_sequence = [WTP,Info,Decision,Nouvelleurne,Nouvellepartie]
+page_sequence = [WTP,Info,Decision,Nouvellepartie]

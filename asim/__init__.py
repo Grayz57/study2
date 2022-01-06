@@ -34,25 +34,26 @@ class Constants(BaseConstants):
 
     events_table = {
         0: {
-            0: dict(winning_colors=balls_colors[0], balls_num_per_color=dict(black=21, yellow=47, red=32), fortemplate=dict(radiolist=radio_list,good= 'noire', draw=20, black_draw=5,yellow_draw=6, red_draw=9)),
-            1: dict(winning_colors=balls_colors[1], balls_num_per_color=dict(black=21, yellow=47, red=32), fortemplate=dict(radiolist=radio_list,good = 'jaune', draw=20, black_draw=5,yellow_draw=6, red_draw=9)),
-            2: dict(winning_colors=balls_colors[2], balls_num_per_color=dict(black=21, yellow=47, red=32), fortemplate=dict(radiolist=radio_list,good= 'rouge',draw=20, black_draw=5,yellow_draw=6, red_draw=9)),
-            3: dict(winning_colors=balls_colors[0:2], balls_num_per_color=dict(black=21, yellow=47, red=32), fortemplate=dict(radiolist=radio_list_two_event,good = 'noire ou jaune',draw=20, black_draw=5,yellow_draw=6, red_draw=9)),
-            4: dict(winning_colors=balls_colors[1:3], balls_num_per_color=dict(black=21, yellow=47, red=32),fortemplate=dict(radiolist=radio_list_two_event,good='jaune ou rouge', draw=20, black_draw=5,yellow_draw=6, red_draw=9)),
-            5: dict(winning_colors=balls_colors[0:3:2], balls_num_per_color=dict(black=21, yellow=47, red=32),fortemplate=dict(radiolist=radio_list_two_event,good='rouge ou noire', draw=20, black_draw=5,yellow_draw=6, red_draw=9)),
+            0: dict(winning_colors=balls_colors[0], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate =dict( radiolist=radio_list,draw=19, black_draw=6,yellow_draw=10, red_draw=3, good = 'noire')),
+            1: dict(winning_colors=balls_colors[1], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate =dict( radiolist=radio_list,draw=19, black_draw=6,yellow_draw=10, red_draw=3,good = 'jaune')),
+            2: dict(winning_colors=balls_colors[2], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate =dict( radiolist=radio_list,draw=19, black_draw=6,yellow_draw=10, red_draw=3,good = 'rouge')),
+            3: dict(winning_colors=balls_colors[0:2], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate =dict( radiolist=radio_list_two_event,draw=19, black_draw=6,yellow_draw=10, red_draw=3, good='noire ou jaune')),
+            4: dict(winning_colors=balls_colors[1:3], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate=dict(radiolist=radio_list_two_event,draw=19, black_draw=6,yellow_draw=10, red_draw=3,good='jaune ou rouge')),
+            5: dict(winning_colors=balls_colors[0:3:2], balls_num_per_color=dict(black=24, yellow=69, red=7),fortemplate=dict(radiolist=radio_list_two_event,draw=19, black_draw=6,yellow_draw=10, red_draw=3,good='noire ou rouge')),
+
         },
         1: {
-            0: dict(winning_colors=balls_colors[0], balls_num_per_color=dict(black=43, yellow=43, red=14), fortemplate=dict(radiolist=radio_list,good= 'noire', draw=20, black_draw=10,yellow_draw=8, red_draw=2)),
-            1: dict(winning_colors=balls_colors[1], balls_num_per_color=dict(black=43, yellow=43, red=14), fortemplate=dict(radiolist=radio_list,good = 'jaune', draw=20, black_draw=10,yellow_draw=8, red_draw=2)),
-            2: dict(winning_colors=balls_colors[2], balls_num_per_color=dict(black=43, yellow=43, red=14), fortemplate=dict(radiolist=radio_list,good= 'rouge',draw=20, black_draw=10,yellow_draw=8, red_draw=2)),
-            3: dict(winning_colors=balls_colors[0:2], balls_num_per_color=dict(black=43, yellow=43, red=14), fortemplate=dict(radiolist=radio_list_two_event,good = 'noire ou jaune',draw=20, black_draw=10,yellow_draw=8, red_draw=2)),
-            4: dict(winning_colors=balls_colors[1:3], balls_num_per_color=dict(black=43, yellow=43, red=14),fortemplate=dict(radiolist=radio_list_two_event,good='jaune ou rouge', draw=20, black_draw=10,yellow_draw=8, red_draw=2)),
-            5: dict(winning_colors=balls_colors[0:3:2], balls_num_per_color=dict(black=43, yellow=43, red=14),fortemplate=dict(radiolist=radio_list_two_event,good='rouge ou noire', draw=20, black_draw=10,yellow_draw=8, red_draw=2))
-        }
+            0: dict(winning_colors=balls_colors[0], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate =dict( radiolist=radio_list,draw=19, black_draw=6,yellow_draw=10, red_draw=3, good = 'noire')),
+            1: dict(winning_colors=balls_colors[1], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate =dict( radiolist=radio_list,draw=19, black_draw=6,yellow_draw=10, red_draw=3,good = 'jaune')),
+            2: dict(winning_colors=balls_colors[2], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate =dict( radiolist=radio_list,draw=19, black_draw=6,yellow_draw=10, red_draw=3,good = 'rouge')),
+            3: dict(winning_colors=balls_colors[0:2], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate =dict( radiolist=radio_list_two_event,draw=19, black_draw=6,yellow_draw=10, red_draw=3, good='noire ou jaune')),
+            4: dict(winning_colors=balls_colors[1:3], balls_num_per_color=dict(black=24, yellow=69, red=7), fortemplate=dict(radiolist=radio_list_two_event,draw=19, black_draw=6,yellow_draw=10, red_draw=3,good='jaune ou rouge')),
+            5: dict(winning_colors=balls_colors[0:3:2], balls_num_per_color=dict(black=24, yellow=69, red=7),fortemplate=dict(radiolist=radio_list_two_event,draw=19, black_draw=6,yellow_draw=10, red_draw=3,good='noire ou rouge')),
+        },
     }
 
 
-    bonus = 20
+    bonus = 1000
 
 class Subsession(BaseSubsession):
     pass
@@ -69,10 +70,10 @@ class Player(BasePlayer):
     decision_to_pay = models.IntegerField(min=1, max=Constants.num_choices)
     timeSpent = models.FloatField()
     tirage= models.IntegerField()
+    tirage2=models.IntegerField()
     rand_wtp = models.IntegerField()
-    wtp = models.IntegerField()
+    wtp = models.IntegerField(min=0, max= 300)
 # FUNCTIONS
-
 
 
 def creating_session(subsession: Subsession):
@@ -88,13 +89,19 @@ def creating_session(subsession: Subsession):
         part_num, event_num = get_event(const, round_number)
         p.part = part_num
         p.event = p.participant.events_table[part_num][event_num]
-        p.rand_wtp = randint(1, 10)
+        p.rand_wtp = randint(0, 300)
+
+
 def tirage_gagnant (player: Player):
         player.tirage = sample(range(1, 12), 1)[0]
         player.participant.vars['round_asim'] = player.tirage
         player.participant.vars['payoff_asim'] = player.in_round(player.tirage).payoff
+        player.participant.vars['wtp_asim'] = player.in_round(7).wtp
+        player.participant.vars['rand_wtp_asim']= player.in_round(7).rand_wtp
 
-
+        player.tirage2 = sample(range(1, 6), 1)[0]
+        player.participant.vars['round_asim2'] = player.tirage2
+        player.participant.vars['payoff_asim2'] = player.in_round(player.tirage2).payoff
 def get_rnd_decision(const: Constants):
     return randint(1, const.num_choices)
 
@@ -139,10 +146,9 @@ def set_payoff_wtp(player: Player, const: Constants):
     decision_to_pay = get_rnd_decision(const)
     player.decision_to_pay = decision_to_pay
     if play_lottery(player.ambiguity, decision_to_pay):
-        player.payoff = is_winning_lottery(const, player.part, player.event, decision_to_pay) - player.rand_wtp
+        player.payoff = is_winning_lottery(const, player.part, player.event, decision_to_pay) - player.in_round(7).rand_wtp
     else:
-        player.payoff = is_winning_draw_from_urn(const, player.part, player.event) - player.rand_wtp
-
+        player.payoff = is_winning_draw_from_urn(const, player.part, player.event) - player.in_round(7).rand_wtp
 # PAGES
 class Decision(Page):
     form_model = 'player'
@@ -150,7 +156,7 @@ class Decision(Page):
 
     @staticmethod
     def is_displayed(player:Player):
-        return player.wtp < player.rand_wtp
+        return player.round_number < 7
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
@@ -171,11 +177,6 @@ class Decision(Page):
         radiolist = const.events_table[player.part][player.event]["fortemplate"]["radiolist"]
         return dict(radiolist=radiolist,black=black, red= red, yellow= yellow, win=win, yellow_draw=yellow_draw, black_draw=black_draw,red_draw=red_draw, draw=draw,good=good)
 
-class Nouvelleurne(Page):
-    body_text = "Une nouvelle urne va être générée"
-    @staticmethod
-    def is_displayed(player: Player):
-        return player.round_number == 6
 
 class Nouvellepartie(Page):
     body_text = "Une nouvelle partie va commencer"
@@ -187,6 +188,10 @@ class Nouvellepartie(Page):
         tirage_gagnant(player)
 
 class WTP(Page):
+
+    @staticmethod
+    def is_displayed(player: Player):
+        return player.round_number == 7
     form_model = 'player'
     form_fields = ['wtp']
 
@@ -197,7 +202,7 @@ class Info(Page):
 
     @staticmethod
     def is_displayed(player:Player):
-        return player.wtp >= player.rand_wtp
+        return player.round_number > 6
 
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
@@ -218,4 +223,4 @@ class Info(Page):
         radiolist = const.events_table[player.part][player.event]["fortemplate"]["radiolist"]
         return dict(radiolist=radiolist,black=black, red= red, yellow= yellow, win=win, yellow_draw=yellow_draw, black_draw=black_draw,red_draw=red_draw, draw=draw,good=good)
 
-page_sequence = [WTP,Info,Decision,Nouvelleurne,Nouvellepartie]
+page_sequence = [WTP,Info,Decision,Nouvellepartie]

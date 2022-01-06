@@ -9,7 +9,7 @@ Last page with questionnaire and all gains.
 
 
 class Constants(BaseConstants):
-    name_in_url = 'eeeaezaeazeazezaeazfzin'
+    name_in_url = 'eeeaezezaaeazenororazezaeazfzin'
     players_per_group = None
     num_rounds = 1
 
@@ -25,12 +25,10 @@ class Player(BasePlayer):
     payoff_euros = models.FloatField()
     round_arisk = models.IntegerField()
     payoff_arisk = models.IntegerField()
-    gain1_part1 = models.CurrencyField(initial=0)
-    gain2_part1 = models.CurrencyField(initial=0)
-    gain3_part1 = models.CurrencyField(initial=0)
-    gain4_part1 = models.CurrencyField(initial=0)
-
-
+    gain1 = models.CurrencyField(initial=0)
+    gain2 = models.CurrencyField(initial=0)
+    gain3 = models.CurrencyField(initial=0)
+    gain4 = models.CurrencyField(initial=0)
 
     female = models.IntegerField(
         min=-1, max=1,
@@ -113,10 +111,49 @@ class Player(BasePlayer):
     )
 
 def get_gains(player:Player):
-            player.gain1_part1 = player.participant.vars['payoff_nsimilar']
-            player.gain2_part1 = player.participant.vars['payoff_nsimilar']
-            player.gain3_part1 = player.participant.vars['payoff_nsimilar']
-            player.payoff = (player.gain1_part1 + player.gain2_part1 + player.gain3_part1) / 3
+
+            if player.participant.vars['payoff_namb'] < 0:
+                player.participant.vars['payoff_namb'] = 0
+            else:
+                player.participant.vars['payoff_namb'] = player.participant.vars['payoff_namb']
+
+            if player.participant.vars['payoff_nrisk'] < 0:
+                player.participant.vars['payoff_nrisk'] = 0
+            else:
+                player.participant.vars['payoff_nrisk'] = player.participant.vars['payoff_nrisk']
+
+            if player.participant.vars['payoff_nsim'] < 0:
+                player.participant.vars['payoff_nsim'] = 0
+            else:
+                player.participant.vars['payoff_nsim'] = player.participant.vars['payoff_nsim']
+
+
+#Si il a pas l'info le paiement devient sur partie 1
+
+
+
+            if player.participant.vars['wtp_namb'] < player.participant.vars['rand_wtp_namb'] :
+                player.gain2 = player.participant.vars['payoff_namb2']
+            else:
+                player.gain2 = player.participant.vars['payoff_namb']
+
+
+
+            if player.participant.vars['wtp_nrisk'] < player.participant.vars['rand_wtp_nrisk'] :
+                player.gain3 = player.participant.vars['payoff_nrisk2']
+            else:
+                player.gain3 = player.participant.vars['payoff_nrisk']
+
+
+
+            if player.participant.vars['wtp_nsim'] < player.participant.vars['rand_wtp_nsim'] :
+                player.gain4= player.participant.vars['payoff_nsim2']
+            else:
+                player.gain4 = player.participant.vars['payoff_nsim']
+
+
+
+            player.payoff = (player.gain2 + player.gain3 + player.gain4) / 3
             player.payoff_euros = math.ceil(3 + float(player.payoff.to_real_world_currency(player.session)))
 
 # PAGES
@@ -130,17 +167,31 @@ class Questionnaire1(Page):
     form_fields = ['Risque', 'Ambiguité1','Ambiguité2','ExpJuridique']
     def before_next_page(player: Player,timeout_happened):
         get_gains(player)
-class Retrievegains(WaitPage):
-    after_all_players_arrive = 'get_gains'
 
 class Final_gain(Page):
     @staticmethod
     def vars_for_template(player: Player):
-        gainnsimilar = player.participant.vars['payoff_nsimilar']
-        roundnsimilar = player.participant.vars['round_nsimilar']
+        gainaamb = player.participant.vars['payoff_namb']
+        roundaamb = player.participant.vars['round_namb']
+        wtpaamb = player.participant.vars['wtp_namb']
+        randaamb = player.participant.vars['rand_wtp_namb']
+        gainaamb2 = player.participant.vars['payoff_namb2']
+        roundaamb2 = player.participant.vars['round_namb2']
+
+        gainarisk = player.participant.vars['payoff_nrisk']
+        roundarisk =player.participant.vars['round_nrisk']
+        wtparisk =player.participant.vars['wtp_nrisk']
+        randarisk =player.participant.vars['rand_wtp_nrisk']
+        gainarisk2 = player.participant.vars['payoff_nrisk2']
+        roundarisk2 =player.participant.vars['round_nrisk2']
+
+        gainasim = player.participant.vars['payoff_nsim']
+        roundasim =player.participant.vars['round_nsim']
+        wtpasim = player.participant.vars['wtp_nsim']
+        randasim = player.participant.vars['rand_wtp_nsim']
+        gainasim2 = player.participant.vars['payoff_nsim2']
+        roundasim2 =player.participant.vars['round_nsim2']
 
 
-        #total = player.payoff_euros
-
-        return dict(gainnsimilar=gainnsimilar, roundnsimilar=roundnsimilar)
+        return dict(gainaamb=gainaamb,roundaamb=roundaamb,wtpaamb=wtpaamb,randaamb=randaamb,gainaamb2=gainaamb2,roundaamb2=roundaamb2, gainarisk=gainarisk,roundarisk=roundarisk,wtparisk=wtparisk,randarisk=randarisk,gainarisk2=gainarisk2,roundarisk2=roundarisk2,gainasim=gainasim,roundasim=roundasim,wtpasim=wtpasim,randasim=randasim,gainasim2=gainasim2,roundasim2=roundasim2)
 page_sequence = [Demographics,Questionnaire1,Final_gain]
