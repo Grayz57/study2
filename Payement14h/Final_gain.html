@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+
+{% block title %}
+    L'expérience est désormais terminée.
+{% endblock %}
+{% block content %}
+<p> Merci de votre participation à cette expérience.</p>
+
+<p>
+Au jeu numéro 2 vous étiez prêt à payer {{wtpaamb}} et le prix de l'information était de {{randaamb}}. Par conséquent
+{{ if wtpaamb >= randaamb}}
+    le round {{roundaamb}} a été tiré et vous gagnez {{gainaamb}}
+{{else}}
+    cette partie n'est pas prise en compte pour le paiement et un round supplémentaire du jeu 1 a été tiré au sort. Le round {{roundaamb2}} a été tiré au sort et votre gain pour ce round est de {{gainaamb2}}
+{{endif}}
+</p>
+
+    <p>Au jeu numéro 3 vous étiez prêt à payer {{wtparisk}} et le prix de l'information était de {{randarisk}}. Par conséquent
+{{ if wtparisk >= randarisk}}
+    le round {{roundarisk}} a été tiré et vous gagnez {{gainarisk}}
+{{else}}
+    cette partie n'est pas prise en compte pour le paiement et un round supplémentaire du jeu 1 a été tiré au sort. Le round {{roundarisk2}} a été tiré au sort et votre gain pour ce round est de {{gainarisk2}}
+{{endif}}</p>
+
+
+
+
+
+<p>Au jeu numéro 4 vous étiez prêt à payer {{wtpasim}} et le prix de l'information était de {{randasim}}. Par conséquent
+{{ if wtpasim >= randasim}}
+    le round {{roundasim}} a été tiré et vous gagnez {{gainasim}}
+{{else}}
+    cette partie n'est pas prise en compte pour le paiement et un round supplémentaire du jeu 1 a été tiré au sort. Le round {{roundasim2}} a été tiré au sort et votre gain pour ce round est de {{gainasim2}}
+{{endif}}</p>
+
+
+<p> Vos gains pendant l'expérience sont de {{player.payoff}} ce qui correspond à {{player.payoff_euros}} euros.</p>
+<p> Merci de rester à votre place jusqu'à ce qu'on appelle votre numéro de poste. </p>
+
+{% endblock %}
